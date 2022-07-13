@@ -25,11 +25,6 @@ export default function HomeScreen({ navigation }) {
 
   return (
     <SafeAreaView>
-      
-      <Button onPress={() =>{
-        navigation.navigate('Create');
-      }} title="Crear" />
-
       <FlatList
           data={listDevices}
           keyExtractor={(item, index) => String(index)}

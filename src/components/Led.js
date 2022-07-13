@@ -13,12 +13,12 @@ const Led = (props) => {
                           pin : props.item.pin
                         });
                     }}>
-      <Image source={ 
+                  <Image source={ 
                         props.item.status ?  require('../../img/imagen_on.png') 
                                   : require('../../img/imagen_off.png') } 
                         style={{width:60, height:60,borderRadius:30}}
                     />
-    </TouchableOpacity>
+        </TouchableOpacity>
       <View style={{alignItems:"center",flex:1}}>
         <Text style={{fontWeight:"bold"}}>{props.item.area}</Text>
         <Text>Pin: {props.item.pin}</Text>

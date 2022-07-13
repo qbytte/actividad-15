@@ -68,13 +68,7 @@ export default function DetailScreen({ route, navigation }) {
             }
           }}
         
-      />
-
-      <Button onPress={() =>{
-        setStatus(false);
-        navigation.navigate('Home');
-      }} title="REGRESAR" />
-      
+      />      
       </View>
     </SafeAreaView>
   );
