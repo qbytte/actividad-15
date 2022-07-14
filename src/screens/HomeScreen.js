@@ -3,13 +3,16 @@ import {FlatList, SafeAreaView, Button} from 'react-native';
 import db from './../../src/firebase/config';
 import {ref, onValue} from "firebase/database";
 import Led from '../components/Led';
+import { getAuth } from "firebase/auth";
 
 export default function HomeScreen({ navigation }) {
 
   const [listDevices, setlistDevices] = useState([]);
 
   const  readData = () => {
-    const dbRef = ref(db, 'devices');
+    const auth = getAuth();
+    const user = auth.currentUser.uid;
+    const dbRef = ref(db, 'users/' + user + '/devices/');
     onValue(dbRef, (snapshot) => {
         let records = [];
           snapshot.forEach(childSnapshot => {
